@@ -1,0 +1,118 @@
+.form-group-wrapper {
+  margin-bottom: 0.6rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .form-group {
+    border: 1px solid $border;
+    border-radius: 6px;
+    padding: 0.8rem;
+    .form-label {
+      display: block;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: $dark;
+    }
+    .form-control {
+      width: 100%;
+      border: 0;
+      &::placeholder {
+        color: $grey;
+      }
+    }
+    select {
+      color: $grey;
+      &.selected {
+        color: $dark;
+      }
+      option {
+        color: $dark;
+      }
+    }
+    &.invalid {
+      color: $danger;
+      border-color: $danger;
+      .form-label {
+        color: $danger;
+      }
+    }
+    & + .error {
+      display: inline-block;
+      width: 100%;
+      font-size: 0.8rem;
+      color: $danger;
+      margin-top: 0.4rem;
+    }
+    &.password {
+      position: relative;
+      .form-control {
+        padding-right: 2rem;
+      }
+      .icon {
+        position: absolute;
+        bottom: 0.5rem;
+        right: 1rem;
+        color: $grey;
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .input-group {
+    display: flex;
+    .prepend {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.85rem;
+      border-right: 1px solid $border;
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+    }
+    .append {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.85rem;
+      border-left: 1px solid $border;
+      padding-right: 0.8rem;
+      padding-left: 0.8rem;
+      select {
+        border: 0;
+        color: $dark;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+    }
+    .wrapper {
+      flex-grow: 1;
+    }
+    &.invalid {
+      .prepend {
+        border-right-color: $danger;
+      }
+      .append {
+        border-left-color: $danger;
+      }
+    }
+  }
+  &:has(.input-group) {
+    .form-group {
+      padding: 0;
+      .wrapper {
+        padding: 0.8rem;
+      }
+    }
+  }
+}
+
+.invisible-input {
+  position: relative;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  z-index: -1;
+}

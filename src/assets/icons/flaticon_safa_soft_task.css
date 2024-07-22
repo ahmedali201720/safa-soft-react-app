@@ -1,0 +1,104 @@
+/*!
+*    ______ _       _   _
+*    |  ____| |     | | (_)
+*    | |__  | | __ _| |_ _  ___ ___  _ __
+*    |  __| | |/ _` | __| |/ __/ _ \| '_ \
+*    | |    | | (_| | |_| | (_| (_) | | | |
+*    |_|    |_|\__,_|\__|_|\___\___/|_| |_|
+*
+*         https://www.flaticon.com
+*/
+
+@font-face {
+    font-family: "flaticon_safa_soft_task";
+    src: url("./flaticon_safa_soft_task.woff2?4f279ae8652fb9533a1a5a8f60232d95") format("woff2"),
+url("./flaticon_safa_soft_task.woff?4f279ae8652fb9533a1a5a8f60232d95") format("woff"),
+url("./flaticon_safa_soft_task.eot?4f279ae8652fb9533a1a5a8f60232d95#iefix") format("embedded-opentype"),
+url("./flaticon_safa_soft_task.ttf?4f279ae8652fb9533a1a5a8f60232d95") format("truetype"),
+url("./flaticon_safa_soft_task.svg?4f279ae8652fb9533a1a5a8f60232d95#flaticon_safa_soft_task") format("svg")
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_safa_soft_task !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-user:before {
+    content: "\f101";
+}
+.flaticon-user-1:before {
+    content: "\f102";
+}
+.flaticon-building:before {
+    content: "\f103";
+}
+.flaticon-building-1:before {
+    content: "\f104";
+}
+.flaticon-right-arrow:before {
+    content: "\f105";
+}
+.flaticon-next:before {
+    content: "\f106";
+}
+.flaticon-right-arrow-angle:before {
+    content: "\f107";
+}
+.flaticon-next-1:before {
+    content: "\f108";
+}
+.flaticon-angle-left:before {
+    content: "\f109";
+}
+.flaticon-left-arrow-angle-big-gross-symbol:before {
+    content: "\f10a";
+}
+.flaticon-left-arrow:before {
+    content: "\f10b";
+}
+.flaticon-arrows-right-and-left-filled-triangles:before {
+    content: "\f10c";
+}
+.flaticon-left-arrow-1:before {
+    content: "\f10d";
+}
+.flaticon-right:before {
+    content: "\f10e";
+}
+.flaticon-right-arrow-1:before {
+    content: "\f10f";
+}
+.flaticon-photo:before {
+    content: "\f110";
+}
+.flaticon-image:before {
+    content: "\f111";
+}
+.flaticon-verified:before {
+    content: "\f112";
+}
+.flaticon-security:before {
+    content: "\f113";
+}
+.flaticon-watch:before {
+    content: "\f114";
+}
+.flaticon-view:before {
+    content: "\f115";
+}
+.flaticon-hide:before {
+    content: "\f116";
+}
+.flaticon-plus:before {
+    content: "\f117";
+}
+.flaticon-plus-1:before {
+    content: "\f118";
+}
+

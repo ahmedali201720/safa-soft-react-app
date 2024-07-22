@@ -1,10 +1,21 @@
 import React from "react";
-import "./assets/app.scss";
+import Header from "./layout/header";
+import "./assets/styles/app.scss";
+import Nav from "./component/Nav";
+import Company from "./component/Company";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header></Header>
+      <main id="main" className="theme_container">
+        <div className="stepper_container">
+          <Nav></Nav>
+          <div className="theme_step_container">
+            <Company></Company>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }

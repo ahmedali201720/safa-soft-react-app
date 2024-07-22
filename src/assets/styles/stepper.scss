@@ -1,0 +1,162 @@
+@use "mixins";
+.stepper_nav {
+  .stepper_nav_list {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    .stepper_nav_item {
+      position: relative;
+      width: 25%;
+      padding-right: 1rem;
+      &:last-child {
+        width: fit-content;
+      }
+      span {
+        position: relative;
+        display: inline-block;
+        border: 2px solid #ffffff;
+        background-color: #ffffff;
+        box-shadow: 0 0 5px $greyLight;
+        font-size: 1.6rem;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 50%;
+        color: $grey;
+        z-index: 2;
+      }
+      &:not(:last-child) {
+        &::before {
+          position: absolute;
+          content: "";
+          left: 48px;
+          @include mixins.y-center;
+          width: 100%;
+          height: 8px;
+          background-color: transparent;
+          border-top: 8px solid #ffffff;
+          border-bottom: 8px solid #ffffff;
+          z-index: 1;
+        }
+      }
+      &.active {
+        span {
+          color: $secondary;
+          border-color: $secondary;
+        }
+      }
+      &.done {
+        span {
+          color: $primary;
+          border-color: $primary;
+        }
+        &:not(:last-child) {
+          &::after {
+            position: absolute;
+            content: "";
+            @include mixins.y-center;
+            width: 100%;
+            height: 8px;
+            background-color: $primary;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.theme_step_container {
+  margin-top: 3rem;
+  .title {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: $dark;
+  }
+  .subtitle {
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: $muted;
+    text-align: center;
+    &.alternate {
+      margin-top: 20px;
+      margin-bottom: 0;
+      color: $dark;
+    }
+  }
+  .theme_step_form {
+    background-color: #ffffff;
+    padding: 0.9rem;
+    box-shadow: 0 0 5px $greyLight;
+    border-radius: 5px;
+  }
+
+  .image-uploader {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    .group {
+      position: relative;
+      margin: auto;
+      width: 200px;
+      height: 200px;
+      border: 1px solid $border;
+      border-radius: 50%;
+      padding: 10px;
+      img {
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+        max-width: 100%;
+      }
+    }
+    .float-btn {
+      position: absolute;
+      right: 0.4rem;
+      border: 5px solid #ffffff;
+      background-color: $secondary;
+      color: #ffffff;
+      width: 45px;
+      height: 45px;
+      line-height: 35px;
+      vertical-align: middle;
+      text-align: center;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+
+  .call_to_action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.4rem;
+    &.justify-end {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.confirmation-box {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px $greyLight;
+  border-radius: 5px;
+  text-align: center;
+  .image {
+    margin-bottom: 20px;
+    img {
+      width: 220px;
+      height: auto;
+      max-width: 100%;
+    }
+  }
+}

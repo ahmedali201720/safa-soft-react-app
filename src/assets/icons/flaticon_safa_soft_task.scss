@@ -1,0 +1,121 @@
+$flaticon_safa_soft_task-font: "flaticon_safa_soft_task";
+
+@font-face {
+    font-family: $flaticon_safa_soft_task-font;
+    src: url("./flaticon_safa_soft_task.woff2?4f279ae8652fb9533a1a5a8f60232d95") format("woff2"),
+url("./flaticon_safa_soft_task.woff?4f279ae8652fb9533a1a5a8f60232d95") format("woff"),
+url("./flaticon_safa_soft_task.eot?4f279ae8652fb9533a1a5a8f60232d95#iefix") format("embedded-opentype"),
+url("./flaticon_safa_soft_task.ttf?4f279ae8652fb9533a1a5a8f60232d95") format("truetype"),
+url("./flaticon_safa_soft_task.svg?4f279ae8652fb9533a1a5a8f60232d95#flaticon_safa_soft_task") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_safa_soft_task !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$flaticon_safa_soft_task-map: (
+    "user": "\f101",
+    "user-1": "\f102",
+    "building": "\f103",
+    "building-1": "\f104",
+    "right-arrow": "\f105",
+    "next": "\f106",
+    "right-arrow-angle": "\f107",
+    "next-1": "\f108",
+    "angle-left": "\f109",
+    "left-arrow-angle-big-gross-symbol": "\f10a",
+    "left-arrow": "\f10b",
+    "arrows-right-and-left-filled-triangles": "\f10c",
+    "left-arrow-1": "\f10d",
+    "right": "\f10e",
+    "right-arrow-1": "\f10f",
+    "photo": "\f110",
+    "image": "\f111",
+    "verified": "\f112",
+    "security": "\f113",
+    "watch": "\f114",
+    "view": "\f115",
+    "hide": "\f116",
+    "plus": "\f117",
+    "plus-1": "\f118",
+);
+
+.flaticon-user:before {
+    content: map-get($flaticon_safa_soft_task-map, "user");
+}
+.flaticon-user-1:before {
+    content: map-get($flaticon_safa_soft_task-map, "user-1");
+}
+.flaticon-building:before {
+    content: map-get($flaticon_safa_soft_task-map, "building");
+}
+.flaticon-building-1:before {
+    content: map-get($flaticon_safa_soft_task-map, "building-1");
+}
+.flaticon-right-arrow:before {
+    content: map-get($flaticon_safa_soft_task-map, "right-arrow");
+}
+.flaticon-next:before {
+    content: map-get($flaticon_safa_soft_task-map, "next");
+}
+.flaticon-right-arrow-angle:before {
+    content: map-get($flaticon_safa_soft_task-map, "right-arrow-angle");
+}
+.flaticon-next-1:before {
+    content: map-get($flaticon_safa_soft_task-map, "next-1");
+}
+.flaticon-angle-left:before {
+    content: map-get($flaticon_safa_soft_task-map, "angle-left");
+}
+.flaticon-left-arrow-angle-big-gross-symbol:before {
+    content: map-get($flaticon_safa_soft_task-map, "left-arrow-angle-big-gross-symbol");
+}
+.flaticon-left-arrow:before {
+    content: map-get($flaticon_safa_soft_task-map, "left-arrow");
+}
+.flaticon-arrows-right-and-left-filled-triangles:before {
+    content: map-get($flaticon_safa_soft_task-map, "arrows-right-and-left-filled-triangles");
+}
+.flaticon-left-arrow-1:before {
+    content: map-get($flaticon_safa_soft_task-map, "left-arrow-1");
+}
+.flaticon-right:before {
+    content: map-get($flaticon_safa_soft_task-map, "right");
+}
+.flaticon-right-arrow-1:before {
+    content: map-get($flaticon_safa_soft_task-map, "right-arrow-1");
+}
+.flaticon-photo:before {
+    content: map-get($flaticon_safa_soft_task-map, "photo");
+}
+.flaticon-image:before {
+    content: map-get($flaticon_safa_soft_task-map, "image");
+}
+.flaticon-verified:before {
+    content: map-get($flaticon_safa_soft_task-map, "verified");
+}
+.flaticon-security:before {
+    content: map-get($flaticon_safa_soft_task-map, "security");
+}
+.flaticon-watch:before {
+    content: map-get($flaticon_safa_soft_task-map, "watch");
+}
+.flaticon-view:before {
+    content: map-get($flaticon_safa_soft_task-map, "view");
+}
+.flaticon-hide:before {
+    content: map-get($flaticon_safa_soft_task-map, "hide");
+}
+.flaticon-plus:before {
+    content: map-get($flaticon_safa_soft_task-map, "plus");
+}
+.flaticon-plus-1:before {
+    content: map-get($flaticon_safa_soft_task-map, "plus-1");
+}
