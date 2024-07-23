@@ -31,10 +31,6 @@ function Company(props: any) {
     } else setCities([]);
   }, [formValue.country, props.cities]);
 
-  useEffect(() => {
-    handleCountryChange();
-  }, []);
-
   return (
     <Fragment>
       <h4 className="title">Verify Your Company</h4>
