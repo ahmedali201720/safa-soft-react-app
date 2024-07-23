@@ -5,7 +5,6 @@ import Company from "../component/Company";
 import Logo from "../component/Logo";
 import Confirmation from "../component/Confirmation";
 import { useNavigate } from "react-router-dom";
-import { error } from "console";
 
 function Home(props: any) {
   const navigate = useNavigate();
