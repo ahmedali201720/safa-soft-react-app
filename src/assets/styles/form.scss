@@ -120,3 +120,11 @@
   opacity: 0;
   z-index: -1;
 }
+
+.alert-danger {
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+  background-color: #ffe8e8;
+  color: $secondary;
+  margin-bottom: 1rem;
+}

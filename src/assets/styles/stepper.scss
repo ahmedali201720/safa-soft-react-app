@@ -114,6 +114,8 @@
         width: 180px;
         height: 180px;
         max-width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
       }
     }
     .float-btn {
