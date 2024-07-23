@@ -1,6 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 
-function Logo() {
+function Logo(props: any) {
   return (
     <Fragment>
       <h4 className="title">Upload Company Logo</h4>
@@ -20,9 +20,20 @@ function Logo() {
         </div>
       </form>
       <div className="call_to_action justify-end mt-20">
-        <button className="btn btn-muted md">Back</button>
-        <button className="btn btn-primary xl">
-          <span className="css-spinner sm icon-fix me-1"></span>
+        <button
+          className="btn btn-muted md"
+          onClick={() => {
+            props.next(2);
+          }}
+        >
+          Back
+        </button>
+        <button
+          className="btn btn-primary xl"
+          onClick={() => {
+            props.next(4);
+          }}
+        >
           Next
         </button>
       </div>

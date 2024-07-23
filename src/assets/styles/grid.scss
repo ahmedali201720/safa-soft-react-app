@@ -8,8 +8,15 @@
   }
   .col {
     flex-grow: 1;
+    max-width: 50%;
+    &.col-12 {
+      max-width: 100%;
+    }
   }
   @media screen and (max-width: 575px) {
     flex-direction: column;
+    .col {
+      max-width: 100%;
+    }
   }
 }

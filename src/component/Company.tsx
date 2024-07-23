@@ -1,6 +1,40 @@
+import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 
-function Company() {
+function Company(props: any) {
+  const [formValue, setFormValue] = useState({
+    companyName: "",
+    lang: "en",
+    address: "",
+    businessEmail: "",
+    country: "Egypt",
+    city: "",
+    dialCode: "20",
+    phone: "",
+  });
+  const [cities, setCities] = useState([]);
+
+  const handleCountryChange = async (e?: any) => {
+    if (e)
+      await setFormValue({
+        ...formValue,
+        country: e.target.value,
+      });
+  };
+
+  useEffect(() => {
+    const filteredCity = props?.cities?.filter(
+      (city: any) => city.country === formValue.country
+    );
+    if (filteredCity?.length) {
+      setCities(filteredCity[0].cities);
+    } else setCities([]);
+  }, [formValue.country, props.cities]);
+
+  useEffect(() => {
+    handleCountryChange();
+  }, []);
+
   return (
     <Fragment>
       <h4 className="title">Verify Your Company</h4>
@@ -67,9 +101,20 @@ function Company() {
                 <label className="form-label" htmlFor="company_country">
                   Country
                 </label>
-                <select className="form-control" id="company_country">
+                <select
+                  className="form-control"
+                  id="company_country"
+                  value={formValue.country}
+                  onChange={handleCountryChange}
+                >
                   <option value="">Choose your country</option>
-                  <option value="USA">United States</option>
+                  {props?.countries?.map((ctry: any, index: number) => {
+                    return (
+                      <option value={ctry.country} key={ctry.country + index}>
+                        {ctry.country}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
@@ -82,14 +127,20 @@ function Company() {
                 </label>
                 <select className="form-control" id="city">
                   <option value="">Choose your city</option>
-                  <option value="USA">Alaska</option>
+                  {cities?.map((city: any, index: number) => {
+                    return (
+                      <option value={city} key={city + index}>
+                        {city}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col col-12">
             <div className="form-group-wrapper">
               <div className="form-group input-group">
                 <div className="prepend">
@@ -113,9 +164,20 @@ function Company() {
         </div>
       </form>
       <div className="call_to_action justify-end mt-20">
-        <button className="btn btn-muted md">Back</button>
-        <button className="btn btn-primary xl">
-          <span className="css-spinner sm icon-fix me-1"></span>
+        <button
+          className="btn btn-muted md"
+          onClick={() => {
+            props.next(1);
+          }}
+        >
+          Back
+        </button>
+        <button
+          className="btn btn-primary xl"
+          onClick={() => {
+            props.next(3);
+          }}
+        >
           Next
         </button>
       </div>

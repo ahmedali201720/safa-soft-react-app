@@ -1,6 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 
-function Confirmation() {
+function Confirmation(props: any) {
   return (
     <Fragment>
       <h4 className="title">You're all set. Ready ?</h4>
@@ -14,8 +14,18 @@ function Confirmation() {
         <p className="text-dark fs-18 mt-5 mb-0">example@example.com</p>
       </div>
       <div className="call_to_action justify-end mt-20">
-        <button className="btn btn-muted md">Back</button>
-        <button className="btn btn-primary xl">Confirm</button>
+        <button
+          className="btn btn-muted md"
+          onClick={() => {
+            props.next(3);
+          }}
+        >
+          Back
+        </button>
+        <button className="btn btn-primary xl">
+          <span className="css-spinner sm icon-fix me-1"></span>
+          Confirm
+        </button>
       </div>
     </Fragment>
   );

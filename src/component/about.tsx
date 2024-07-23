@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 
-function About() {
+function About(props: any) {
+  const [passwordVisible, setPassowrdVisible] = useState(false);
+
   return (
     <Fragment>
       <h4 className="title">Tell us more about you</h4>
@@ -43,7 +46,13 @@ function About() {
                 </label>
                 <select className="form-control" id="country">
                   <option value="">Choose your country</option>
-                  <option value="USA">United States</option>
+                  {props?.countries?.map((ctry: any, index: number) => {
+                    return (
+                      <option value={ctry.country} key={ctry.country + index}>
+                        {ctry.country}
+                      </option>
+                    );
+                  })}
                 </select>
               </div>
             </div>
@@ -76,13 +85,20 @@ function About() {
               Password
             </label>
             <input
-              type="password"
+              type={passwordVisible ? "text" : "password"}
               className="form-control"
               id="password"
               placeholder="Choose a password"
               autoComplete="off"
             />
-            <i className="icon flaticon-view"></i>
+            <i
+              className={`icon ${
+                passwordVisible ? "flaticon-hide" : "flaticon-view"
+              }`}
+              onClick={() => {
+                setPassowrdVisible((prev) => !prev);
+              }}
+            ></i>
           </div>
         </div>
         <div className="form-group-wrapper">
@@ -91,13 +107,20 @@ function About() {
               Repeat Password
             </label>
             <input
-              type="password"
+              type={passwordVisible ? "text" : "password"}
               className="form-control"
               id="confirm_password"
               placeholder="Repeat your password"
               autoComplete="off"
             />
-            <i className="icon flaticon-view"></i>
+            <i
+              className={`icon ${
+                passwordVisible ? "flaticon-hide" : "flaticon-view"
+              }`}
+              onClick={() => {
+                setPassowrdVisible((prev) => !prev);
+              }}
+            ></i>
           </div>
         </div>
       </form>
@@ -107,8 +130,12 @@ function About() {
           Back to login
         </a>
         <div className="wrap">
-          <button className="btn btn-primary xl">
-            <span className="css-spinner sm icon-fix me-1"></span>
+          <button
+            className="btn btn-primary xl"
+            onClick={() => {
+              props.next(2);
+            }}
+          >
             Next
           </button>
         </div>
