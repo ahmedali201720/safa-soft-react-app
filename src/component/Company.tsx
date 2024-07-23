@@ -16,6 +16,7 @@ function Company(props: any) {
     city: props.data.city ? props.data.city : "",
     dialCode: props.data.dialCode ? props.data.dialCode : "20",
     phone: props.data.phone ? props.data.phone : "",
+    extraPhone: props.data.extraPhone ? props.data.extraPhone : "",
   });
   const [formState, setFormState] = useState({
     companyName: {
@@ -47,6 +48,10 @@ function Company(props: any) {
       touched: false,
     },
     phone: {
+      valid: true,
+      touched: false,
+    },
+    extraPhone: {
       valid: true,
       touched: false,
     },
@@ -126,6 +131,10 @@ function Company(props: any) {
           touched: true,
         },
         lang: {
+          valid: formState.lang.valid,
+          touched: true,
+        },
+        extraPhone: {
           valid: formState.lang.valid,
           touched: true,
         },
@@ -428,7 +437,7 @@ function Company(props: any) {
           </div>
         </div>
         <div className="row">
-          <div className="col col-12">
+          <div className="col">
             <div className="form-group-wrapper">
               <div
                 className={`form-group input-group ${
@@ -467,6 +476,49 @@ function Company(props: any) {
               {!formState.phone.valid && formState.phone.touched && (
                 <span className="error">Company name is required.</span>
               )}
+            </div>
+          </div>
+          <div className="col">
+            <div className="form-group-wrapper">
+              <div
+                className={`form-group input-group ${
+                  !formState.extraPhone.valid &&
+                  formState.extraPhone.touched &&
+                  "invalid"
+                }`}
+              >
+                <div className="prepend">
+                  <span>+{formValue.dialCode}</span>
+                </div>
+                <div className="wrapper">
+                  <label
+                    className="form-label"
+                    htmlFor="company_phone_number_extra"
+                  >
+                    Company Phone Number
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="company_phone_number_extra"
+                    placeholder="Enter your phone number"
+                    autoComplete="off_phone_number"
+                    value={formValue.extraPhone}
+                    onChange={(e) =>
+                      setFormValue({ ...formValue, extraPhone: e.target.value })
+                    }
+                    onBlur={() => {
+                      setFormState({
+                        ...formState,
+                        extraPhone: {
+                          valid: formState.extraPhone.valid,
+                          touched: true,
+                        },
+                      });
+                    }}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

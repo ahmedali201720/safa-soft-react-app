@@ -3,10 +3,10 @@ import { Fragment } from "react/jsx-runtime";
 
 function Logo(props: any) {
   const [fileInfo, setFileInfo] = useState({
-    file: null,
+    file: props.data.file ? props.data.file : null,
     sizeValid: true,
   });
-  const [src, setSrc] = useState("");
+  const [src, setSrc] = useState(props.data.src ? props.data.src : "");
 
   const handleLogoChange = (e: any) => {
     const file = e?.target?.files[0];
@@ -17,6 +17,16 @@ function Logo(props: any) {
       });
       setSrc(URL.createObjectURL(file));
     }
+  };
+
+  const submitForm = () => {
+    if (fileInfo.sizeValid) {
+      props.submit({
+        file: fileInfo.file,
+        src: src,
+      });
+      props.next(4);
+    } else return;
   };
 
   return (
@@ -54,12 +64,7 @@ function Logo(props: any) {
         >
           Back
         </button>
-        <button
-          className="btn btn-primary xl"
-          onClick={() => {
-            props.next(4);
-          }}
-        >
+        <button className="btn btn-primary xl" onClick={submitForm}>
           Next
         </button>
       </div>

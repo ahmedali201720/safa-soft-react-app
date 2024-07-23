@@ -11,10 +11,11 @@ function Confirmation(props: any) {
         <p className="text-secondary fs-18 fw-600 mb-0">
           We will send a message for this e-mail.
         </p>
-        <p className="text-dark fs-18 mt-5 mb-0">example@example.com</p>
+        <p className="text-dark fs-18 mt-5 mb-0">{props.email}</p>
       </div>
       <div className="call_to_action justify-end mt-20">
         <button
+          disabled={props.loading}
           className="btn btn-muted md"
           onClick={() => {
             props.next(3);
@@ -22,8 +23,14 @@ function Confirmation(props: any) {
         >
           Back
         </button>
-        <button className="btn btn-primary xl">
-          <span className="css-spinner sm icon-fix me-1"></span>
+        <button
+          className="btn btn-primary xl"
+          disabled={props.loading}
+          onClick={props.submit}
+        >
+          {props.loading && (
+            <span className="css-spinner sm icon-fix me-1"></span>
+          )}
           Confirm
         </button>
       </div>
